@@ -1,0 +1,50 @@
+#!/usr/bin/make -f
+# Made with the aid of debmake, by Christoph Lameter,
+# based on the sample debian/rules file for GNU hello by Ian Jackson.
+
+package=araneum
+
+build:
+	cp -f extra/araneum debian/init.d
+	$(checkdir)
+	./configure CFLAGS="-O2 -g -Wall" --bindir=/usr/bin --sbindir=/usr/sbin --mandir=/usr/share/man --sysconfdir=/etc --localstatedir=/var
+	$(MAKE)
+	touch build
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -rf build
+	-$(MAKE) clean
+	dh_clean
+
+binary-indep: checkroot build
+	$(checkdir)
+
+binary-arch: checkroot build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+	$(MAKE) install DESTDIR=`pwd`/debian/araneum
+	dh_strip
+	gzip -9 debian/araneum/usr/share/man/man1/*
+	cp -f etc/logrotate.d/araneum debian/araneum/etc/logrotate.d
+	dh_installdocs
+	dh_installinit
+	cp -f extra/php-fcgi debian/araneum/etc/init.d
+	dh_installchangelogs ChangeLog
+	gzip -9 debian/araneum/usr/share/doc/araneum/changelog*
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+
+checkroot:
+	$(checkdir)
+	test root = "`whoami`"
+
+.PHONY: binary binary-arch binary-indep clean checkroot

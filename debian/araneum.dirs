@@ -1,0 +1,8 @@
+usr/bin
+usr/sbin
+etc/init.d
+etc/araneum
+etc/logrotate.d
+var/lib/araneum
+var/log/araneum
+var/www/araneum

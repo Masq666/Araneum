@@ -1,0 +1,9 @@
+/var/log/araneum/access.log {
+	weekly
+	compress
+	delaycompress
+	rotate 52
+	missingok
+	create 640 www-data www-data
+	sharedscripts
+}

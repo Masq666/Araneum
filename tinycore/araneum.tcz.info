@@ -1,0 +1,29 @@
+Title:			araneum.tcz
+Description:	Araneum HTTP Server
+Version:		0.8.2
+Author:			Koppin22 Media DA
+Original-site:	http://araneum.koppin22.com/
+Copying-policy:	GPL
+Size:			944k
+Extension_by:	Philipe Rubio
+Comments:		Araneum is a small, high-performance webserver, this extension 
+				has been compiled with SSL disabled. So there are no dependencies.
+				
+				Compiled with the following flags.
+				
+				-Os -march=i468 -mtune=i686 -pipe
+				
+				Man pages and source has been removed from this package, to keep it
+				as small as possible, source code and documentation is available
+				at http://araneum.koppin22.com
+				
+				The home page directory is at:
+					/usr/local/var/www
+					
+				The configuration file is at:
+					/usr/local/etc/araneum/httpd.conf
+					
+				Start with "sudo araneum" or "araneum -h" for help.
+
+Change-log:		---------
+Current:		2011/03/14 First version.

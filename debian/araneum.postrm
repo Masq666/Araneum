@@ -1,0 +1,4 @@
+#!/bin/sh
+
+#DEBHELPER#
+update-rc.d -f php-fcgi remove >/dev/null || exit $?

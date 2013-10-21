@@ -1,0 +1,3 @@
+Hiawatha, an advanced and secure webserver for Unix.
+
+Compiled with '--sbindir=/usr/sbin --mandir=/usr/share/man --sysconfdir=/etc --localstatedir=/var'.

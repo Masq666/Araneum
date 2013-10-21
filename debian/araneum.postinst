@@ -1,0 +1,4 @@
+#!/bin/sh
+
+#DEBHELPER#
+update-rc.d php-fcgi defaults > /dev/null

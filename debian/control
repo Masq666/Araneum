@@ -1,0 +1,14 @@
+Source: araneum
+Section: web
+Priority: optional
+Maintainer: Philipe Rubio <araneum@koppin22.com>
+Standards-Version: 3.6.2
+Build-Depends: libc6-dev, libssl-dev, dpkg-dev, debhelper, fakeroot, libxml2-dev
+
+Package: araneum
+Architecture: any
+Depends: ${shlibs:Depends}, logrotate
+Suggests: php5-cgi, openssl
+Conflicts:
+Provides: httpd, httpd-cgi
+Description: Araneum is a high performance, flexible and easy to use and configure Web Server.

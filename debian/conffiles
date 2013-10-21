@@ -1,0 +1,7 @@
+/etc/init.d/araneum
+/etc/init.d/php-fcgi
+/etc/araneum/cgi-wrapper.conf
+/etc/araneum/httpd.conf
+/etc/araneum/mimetype.conf
+/etc/araneum/php-fcgi.conf
+/etc/logrotate.d/araneum
